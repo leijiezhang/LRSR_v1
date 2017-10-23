@@ -1,9 +1,9 @@
 % get the rank analysis of each W ( from diffrent value of k and c)
 
-class_num=26;
-ii=2;
-jj=5;
-k=2;
+class_num=20;
+ii=7;
+jj=4;
+k_num=17;
 coe_idx=-3:3;
 %set the trainning epoch
  options.training_epochs = 200;
@@ -12,11 +12,11 @@ coe_idx=-3:3;
  options.lambda2=10^coe_idx(jj);
  %  get all kinds of data of this trainning
  DataOptions=[];
- DataOptions.set_name='ISOlet';
+ DataOptions.set_name='COIL';
  DataOptions.cross_validate=true;
  DataOptions.cv_fold=3;
  DataOptions.cv_num=1;
- [fea_Train,fea_Test,gnd_Train,gnd_Test,class_Num]=getData(DataOptions);
+ [fea_Train,fea_Test,gnd_Train,gnd_Test,~]=getData(DataOptions);
  % get the responses of X
  options_w=[];
 options_w.NeighborMode = 'Supervised';
@@ -28,7 +28,7 @@ W = constructW(fea_Train,options_w);
  
   % get the responses of X
 Y = Eigenmap(W,class_num-1);
-[U,V]=objFun(options,Y,fea_Train,k);
+[U,V]=objFun(options,Y,fea_Train,k_num);
 
 
 
@@ -37,11 +37,15 @@ W=U*V;
 [U_tmp,S,V_tmp]=svd(W);
 S_count=diag(S);
 
-S_count(K+1:end)=0;
-S_num= find(S_count>0, 1, 'last' );
-W=U_tmp(:,S_num)*V_tmp(S_num,:);
+S_count(k_num+1:end)=0;
+
+W=U_tmp(:,k_num)*V_tmp(k_num,:);
 W_info.W=W;
 W_info.S=S_count;
+figure;
+plot(1:(class_num-1),S_count,'b-o','LineWidth',1.5);
+xlabel('Index of Singular Value','fontsize',12);
+ylabel('Singular Value','fontsize',12);
 
-save ISOlet_Winfo_lda.mat Winfo_arr S_num_arr;
+save COIL_Winfo_lda.mat W_info;
 

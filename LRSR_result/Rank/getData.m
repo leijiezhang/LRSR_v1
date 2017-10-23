@@ -44,21 +44,21 @@ end
 % load dataset corresponse to custom experiment 
 switch lower(set_name)
     case {lower('PIE')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\PIE_all.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\PIE_all.mat');
     case {lower('UMIST')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\UMIST.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\UMIST.mat');
     case {lower('YaleB')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\YaleB_32x32.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\YaleB_32x32.mat');
     case {lower('MNIST')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\MNISTOrig.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\MNISTOrig.mat');
     case {lower('Yale')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\Yale_32x32.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\Yale_32x32.mat');
      case {lower('COIL')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\coil20.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\coil20.mat');
      case {lower('ISOlet')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\ISOlet.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\ISOlet.mat');
      case {lower('USPS')}
-        load('H:\Workplace\matlab\LRSR_LPP\datasets\usps.mat');
+        load('F:\WrokSpace\Matlab\LRSR_v1\LRSR_LPP\datasets\usps.mat');
      otherwise
         error('Dataset does not exist!');
 end
