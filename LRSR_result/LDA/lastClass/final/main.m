@@ -1,0 +1,2 @@
+imagesc(W);
+colorbar;

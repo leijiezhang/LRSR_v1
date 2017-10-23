@@ -1,0 +1,18 @@
+h=figure;
+LRSR_error=errorArr(:,1);
+USSL_error=errorArr(:,2);
+%set cardinality set
+car_idx=10:10:100;
+car_idx=[car_idx,150:50:1024,1024];
+car_idx=car_idx';
+plot(car_idx,LRSR_error,'rs-');
+hold on;
+plot(car_idx,USSL_error,'bo-');
+xlabel('Dim');
+ylabel('Error rate (%)');
+title('Comparition of LRSR & USSL @ NPE');
+saveas(h,'isolet_npe_67
+
+
+
+
