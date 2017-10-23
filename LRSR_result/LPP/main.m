@@ -291,14 +291,13 @@ end
 
 
 % car_idx=(1:1:dim)';
-LRSR_error=LRSR_result{6,7};
+
+car_idx=[2:2:10,15:5:30,40:10:70,100:50:200];
+LRSR_error=LRSR_result{7,7};
 best_k=LRSR_error(:,2);
 LRSR_error(:,2)=[];
 LRSR_acc=1-LRSR_error;
 USSR_acc=1-USSR_error;
 result_com=[LRSR_acc,USSR_acc,car_idx,best_k];
-save YaleB_LPP_final.mat LRSR_result USSR_error LRSR_error car_idx best_k result_com USSR_acc LRSR_acc;
-clear;
-
-
+save PIE_LDA_final.mat LRSR_result USSR_error LRSR_error car_idx best_k result_com USSR_acc LRSR_acc;
 

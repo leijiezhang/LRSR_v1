@@ -29,7 +29,7 @@
 
 figure;
 plot(car_idx,LRSR_acc,'r-s',car_idx,USSR_acc,'b-o','LineWidth',1.5);
-title('Comparation of LRSR on LDA & USSR @ USPS');
+title('Comparation of LRSR on LDA & USSR @ ISOLET');
 xlabel('Dim','fontsize',12);
 ylabel('Accuracy','fontsize',12);
 h_leg =legend('LRSR Accuracy','USSR Accuracy');
@@ -40,7 +40,7 @@ grid on;
 
 figure;
 plot(car_idx,best_k,'r-s',car_idx,car_idx,'b-o','LineWidth',1.5);
-title('Comparation of LRSR on LDA & USSR @ USPS');
+title('Comparation of LRSR on LDA & USSR @ CMU PIE');
 xlabel('Dim','fontsize',12);
 ylabel('Rank','fontsize',12);
 h_leg =legend('USSL(Full rank of W)','LRSR(Low rank of W)');

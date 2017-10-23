@@ -1,5 +1,5 @@
 figure;
-dim=9;
+dim=16;
 car_idx=(1:1:dim)';
 plot(car_idx,LDA(:,1),'LineWidth',1.5);
 hold on;
