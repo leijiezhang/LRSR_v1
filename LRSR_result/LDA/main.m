@@ -278,20 +278,20 @@ clear;clc;
 %========get all figure of each dataset with all posible of lambda1 and
 % lambda2======
 
-% dim=67;
-% car_idx=(1:1:dim)';
-% k=7;
-% for i = 7:7
-%     LRSR_error=LRSR_result{k,i}(:,1);
-%     best_k=LRSR_result{k,i}(:,2);
-% 
-%     figure;
-%     subplot(1,2,1);
-%     plot(car_idx,LRSR_error,'r-o',car_idx,USSR_error,'b-*');
-%     subplot(1,2,2);
-%     plot(car_idx,car_idx,'b-s',car_idx,best_k,'r-d');
-% end
-% USSR_error=LDA(:,12);
+dim=67;
+car_idx=(1:1:dim)';
+k=6;
+for i = 6:7
+    LRSR_error=LRSR_result{k,i}(:,1);
+    best_k=LRSR_result{k,i}(:,2);
+
+    figure;
+    subplot(1,2,1);
+    plot(car_idx,LRSR_error,'r-o',car_idx,USSR_error,'b-*');
+    subplot(1,2,2);
+    plot(car_idx,car_idx,'b-s',car_idx,best_k,'r-d');
+end
+USSR_error=LDA(:,12);
 
 
 % car_idx=(1:1:dim)';
