@@ -1,9 +1,9 @@
 % get the rank analysis of each W ( from diffrent value of k and c)
 
-class_num=20;
-ii=7;
-jj=4;
-k_num=17;
+class_num=26;
+ii=5;
+jj=5;
+k_num=24;
 coe_idx=-3:3;
 %set the trainning epoch
  options.training_epochs = 200;
@@ -12,7 +12,7 @@ coe_idx=-3:3;
  options.lambda2=10^coe_idx(jj);
  %  get all kinds of data of this trainning
  DataOptions=[];
- DataOptions.set_name='COIL';
+ DataOptions.set_name='ISOlet';
  DataOptions.cross_validate=true;
  DataOptions.cv_fold=3;
  DataOptions.cv_num=1;
@@ -46,6 +46,7 @@ figure;
 plot(1:(class_num-1),S_count,'b-o','LineWidth',1.5);
 xlabel('Index of Singular Value','fontsize',12);
 ylabel('Singular Value','fontsize',12);
+set (gcf,'Position',[0,0,800,500], 'color','w');
+save ISOlet_Winfo_lda.mat W_info;
 
-save COIL_Winfo_lda.mat W_info;
-
+title('');
